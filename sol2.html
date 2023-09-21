@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sol2</title>
+</head>
+<body>
+    <script>
+        class Person {
+            constructor(name, age, gender, address) {
+                this.name = name
+                this.age = age
+                this.gender = gender
+                this.address = address
+            }
+            set_name(name) { 
+                this.name = name
+            }
+            set_age(age) {
+                this.age = age
+            }
+            set_gender(gender) {
+                this.gender = gender
+            }
+            set_address(address) {
+                this.address = address
+            }
+        }
+
+        const name = prompt("Enter name:");
+        const age = parseInt(prompt("Enter age:"));
+        const gender = prompt("Enter gender:");
+        const address = prompt("Enter address:");
+
+        const new_person = new Person(name, age, gender, address)
+
+        console.log(JSON.stringify(new_person));
+
+        const update_name = prompt("Enter updated name:");
+        const update_age = parseInt(prompt("Enter updated age:"));
+        const update_gender = prompt("Enter updated gender:");
+        const update_address = prompt("Enter updated address:");
+        new_person.set_name(update_name)
+        new_person.set_age(update_age)
+        new_person.set_gender(update_gender)
+        new_person.set_address(update_address)
+
+        console.log("========== after update ==========");
+        console.log(JSON.stringify(new_person));
+
+
+    </script>
+</body>
+</html>

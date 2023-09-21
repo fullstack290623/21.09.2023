@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax2</title>
+</head>
+<body>
+    <script>
+        class Post {
+            constructor(userId, id, title, body) {
+                this.userId = userId
+                this.id = id
+                this.title = title
+                this.body = body
+            }
+            set_user_id(userId) {
+                this.userId = userId
+            }
+            set_id(id) {
+                this.id = id
+            }
+            set_title(title) {
+                this.title = title
+            }
+            set_body(body) {
+                this.body = body
+            }
+        }
+
+        fetch("https://jsonplaceholder.typicode.com/posts").
+        // template - do not touch
+        then(response => {
+            return response.json();
+        }).
+        // what to do with the data?
+        /*
+        {
+            "userId": 1,
+            "id": 3,
+            "title": "ea molestias quasi exercitationem repellat qui ipsa sit aut",
+            "body": "et iusto sed quo ..."
+        }
+        */
+        then(posts => {
+            console.log(posts);
+            document.write(`the length of the array: ${posts.length}`)
+
+            // for(let i = 0; i < posts.length; i++) {
+            //     document.write(`${i} -- ${posts[ i ].body} <br />`)
+            // }
+
+            posts.forEach(element => {
+                document.write(`${element.body} <br />`)
+            });
+
+            //const new_post = new Post(post.userId, post.id, post.title, post.body)
+            //new_post.set_title('new title')
+
+            // const user1 = new User(user.id, user.name, user.email)
+            // const user2 = {
+            //     id: user.id,
+            //     name: user.name,
+            //     email: user.email
+            // }
+        });        
+    </script>
+</body>
+</html>
