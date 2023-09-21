@@ -1,0 +1,10 @@
+
+create db.json
+{
+    "name": [ ... ]
+}
+
+npm install -g json-server
+
+bash:
+json-server --watch db.json
